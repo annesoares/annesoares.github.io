@@ -111,6 +111,10 @@ nav a {
 	transition: color 0.5s;
 }
 
+@keyframes rainbow {
+	from { background-position:top left; }
+	to { background-position:top right; }
+}
 @-webkit-keyframes rainbow {
 	from { background-position:top left; }
 	to { background-position:top right; }
