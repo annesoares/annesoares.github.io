@@ -1,147 +1,175 @@
 html,body{
     width: 100%;
-    height:100%;
+    height: 100%;
 }
-
 body {
-	background: #000;
-	font-family: Verdana, Sans-serif;
-	font-size: 12px;
+  background-color: #010101;
+	font-family: Courier New, Sans-serif;
+	font-size: 18px;
 	color: #fff;
 	margin: 0;
 }
-
-header {
-	width: 96%;
-	height: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-  position: relative;
-}
-
 footer {
-	position: relative;
-	display: block;
-	width: 100%;
-	padding-bottom: 3px;
-  transform: translateY(-100%);
+  font-size: 0.7em;
+  padding: 1.5em 0;
+  color: #aaa;
 }
 
 a {
-	color: #dadada;
-}
-
-.main-title {
-	font-family: 'Alex Brush', cursive;
-	font-weight: 200;
-	font-size: 10vh;
-	margin: 0;
-	padding-top: 5px;
-	margin-bottom: -15px;
+  color: #dadada;
 }
 header p {
-	font-size: 1.1em;
-}
-.main-nav {
-  width: 70%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin: 1.5em;
   font-size: 1.1em;
 }
-.main-nav a {
-  text-decoration: none;
+b, u, i, strong, em {
+	animation: rainbow-t 20s forwards linear infinite;
+}
+.main-title {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 200;
+  font-size: 5vh;
+  margin: 0;
 }
 .social-media {
-	width: 20%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-  margin: 0.2em;
-	font-size: 1.7em;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: .7em 0;
+  font-size: 1.7em;
+  color: #FFF;
 }
-.social-media a {
-	color: #FFF;
+.social-media a svg {
+  transition: .1s;
 }
-.social-media a:hover .fa-file-text {
-	color: #e49130;
-	-webkit-transition: color 0.5s;
-	transition: color 0.5s;
-}
-.social-media a:hover .fa-facebook-square {
-	color: #3b5998;
-	-webkit-transition: color 0.5s;
-	transition: color 0.5s;
-}
-.social-media a:hover .fa-twitter-square {
-	color: #55acee;
-	-webkit-transition: color 0.5s;
-	transition: color 0.5s;
-}
-.social-media a:hover .fa-github-square {
-	color: #000;
-	-webkit-transition: color 0.5s;
-	transition: color 0.5s;
-}
-.social-media a:hover .fa-linkedin-square {
-	color: #0077b5;
-	-webkit-transition: color 0.5s;
-	transition: color 0.5s;
-}
-.social-media a:hover .fa-envelope {
-	color: #A83329;
-	-webkit-transition: color 0.5s;
-	transition: color 0.5s;
-}
-
-@keyframes rainbow {
-	from { background-position:top left; }
-	to { background-position:top right; }
-}
-@-webkit-keyframes rainbow {
-	from { background-position:top left; }
-	to { background-position:top right; }
-}
-@-moz-keyframes rainbow {
-	from { background-position:top left; }
-	to { background-position:top right; }
-}
-.divider {
-	width: 100%;
-	height: 5px;
-	-moz-border-radius: 100%;
-	-webkit-border-radius: 100%;
-	border-radius: 100%;
-
-	background: -webkit-linear-gradient( left, red, orange, yellow, green, blue, indigo, violet, indigo, blue, green, yellow, orange, red );
-	background: -moz-linear-gradient( left, red, orange, yellow, green,  blue, indigo, violet, indigo, blue, green, yellow, orange,red );
-	background: -o-linear-gradient( left, red, orange, yellow, green, blue, indigo, violet, indigo, blue, green, yellow, orange,red );
-	background: linear-gradient( left, red, orange, yellow, green, blue, indigo, violet, indigo, blue, green, yellow, orange,red );
-	-moz-animation: rainbow 20s forwards linear infinite;
-	-webkit-animation: rainbow 20s forwards linear infinite;
-	-o-animation: rainbow 20s forwards linear infinite;
-	animation: rainbow 20s forwards linear infinite;
-	background-size: 13000% auto;
+.social-media a:hover svg {
+  color: rgb(255,200,200);
+	animation: rainbow-s 3s forwards linear infinite;
+  animation-delay: .1s;
 }
 
 
-@media (min-width: 993px) and (max-width: 1200px) { body {font-size: 14px;} }
-@media (min-width: 769px) and (max-width: 992px) {
-  body {font-size: 18px;}
-  header {margin: 0 auto;}
-  .main-nav {width: 100%;}
-}
-@media (min-width: 577px) and (max-width: 768px) { body {font-size: 24px;} }
-@media (max-width: 576px) { body {font-size: 28px;} }
+/*** animações ***/
 
-canvas {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  z-index: -1;
-  opacity: 0.5;
+@keyframes rainbow-t {
+  0%, 100% {color: red;}
+  8.33%, 91.63% {color: orange;}
+  16.66%, 83.3% {color: yellow;}
+  24.99%, 74.97% {color: green;}
+  33.32%, 66.64% {color: #3434FF;}
+  41.65%, 58.31% {color: BlueViolet;}
+  49.98% {color: purple;}
 }
+@keyframes rainbow-h {
+  from {background-position: top;}
+  to {background-position: bottom;}
+}
+@keyframes rainbow-w {
+  from {background-position: left;}
+  to {background-position: right;}
+}
+@keyframes rainbow-s {
+  0%, 100% {color: rgb(255,200,200);}
+  8.33%, 91.63% {color: rgb(255, 226, 173);}
+  16.66%, 83.3% {color: rgb(255, 255, 173);}
+  24.99%, 74.97% {color: rgb(200,255,200);}
+  33.32%, 66.64% {color: rgb(200,200,255);}
+  41.65%, 58.31% {color: rgb(232, 201, 255);}
+  49.98% {color: rgb(255, 230, 255);}
+}
+
+
+
+
+/**** vertical ***/
+
+@media all and (orientation:landscape) {
+  header {
+    width: 48%;
+    height: 100%;
+    position: fixed;
+    display: block;
+    top: 0;
+  }
+  article {
+    width: 48%;
+    margin-left: 50%;
+    padding-bottom: 3em;
+    transform: translateY(30vh);
+    text-align: right;
+  }
+  .back-title {
+    display: inline-block;
+    position: absolute;
+    top: 50vh;
+    left: 1em;
+    transform: translateY(-50%);
+  }
+  .divider-h {
+    width: 5px;
+    height: 100%;
+    display: inline-block;
+    background: linear-gradient(red, orange, yellow, green, #3434FF, BlueViolet, purple, BlueViolet, #3434FF, green, yellow, orange, red);
+    animation: rainbow-h 20s forwards linear infinite;
+    background-size: auto 13000%;
+  }
+
+  .divider-w {
+    width: 100%;
+    height: 2px;
+    border-radius: 100%;
+    background: linear-gradient(to left, red, orange, yellow, green, #3434FF, BlueViolet, purple, BlueViolet, #3434FF, green, yellow, orange, red);
+    animation: rainbow-w 20s forwards linear infinite;
+    background-size: 13000% auto;
+  }
+  footer {
+    width: 48%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+
+
+/*** horizontal ***/
+
+@media all and (orientation:portrait) {
+  body {
+    font-size: 2vh;
+  }
+  article {
+    margin: 1em;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 2.5em;
+    margin-top: 1em;
+  }
+  .main-title {
+    font-size: 3em;
+  }
+  .divider-h {
+    width: 100%;
+    height: 5px;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(to left, red, orange, yellow, green, #3434FF, BlueViolet, purple, BlueViolet, #3434FF, green, yellow, orange, red);
+    animation: rainbow-w 20s forwards linear infinite;
+    background-size: 13000% auto;
+  }
+  .divider-w {
+    width: 70%;
+    height: 2px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background: linear-gradient(red, orange, yellow, green, #3434FF, BlueViolet, purple, BlueViolet, #3434FF, green, yellow, orange, red);
+    animation: rainbow-h 20s forwards linear infinite;
+    background-size: auto 13000%;
+  }
+  footer {
+    display: block;
+  }
+}
+
